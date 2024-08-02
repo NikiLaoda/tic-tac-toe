@@ -14,3 +14,17 @@ LOOP {
     Remember, who played last and switch 
     Allow player to add X or O by clicking on the squares
 }
+
+Functions to make:
+1. render
+2. check 3-in-row 
+3. switch of plays
+4. add X or O by clicking on the square
+5. block square, if there are any X's or O's in it
+
+Check 3-in-row variants
+I can cycle through rows, columns and diagnals and ask, if there are 3 equalities in one of them or not => then do YES or NO path
+Or I can use true/false ?
+
+LOOP:
+one function gameLoop, which has all the functions I need to run the game
