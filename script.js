@@ -28,19 +28,23 @@ function gameState(plays) {
     let gameStats = checkWin(plays);
     if (gameStats.state === true) {
         console.log(gameStats.sign === 1 ? "The 1's won!" : "The 0's won!");
+        let restart = prompt('Restart the game? yes/no')
+        if (restart.toLowerCase() === "yes") {
+            arrayPlays = [[2, 3, 4], [5, 6, 7], [8, 9, 2]];
+            lastPlay = [0];
+            gameLoop();
+        } else console.log('Come back at any time!');
     }
 
     else {
         if (lastPlay[0] === 1) {
             playerX(arrayPlays);
             lastPlay[0] = 0;
-            console.log(lastPlay);
         }
 
         else {
             playerO(arrayPlays);
             lastPlay[0] = 1;
-            console.log(lastPlay);
         }
         gameLoop();
     }
