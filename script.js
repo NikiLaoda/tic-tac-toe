@@ -53,13 +53,13 @@ function gameState(plays) {
 function playerX(plays) {
     let goToX = prompt("Peak your place to add X on X axis") - 1;
     let goToY = prompt("Peak your place to add X on Y axis") - 1;
-    plays[goToY][goToX] = 1;
+    if (plays[goToY][goToX] !== 1 && plays[goToY][goToX] !== 0) plays[goToY][goToX] = 1;
 }
 
 function playerO(plays) {
     let goToX = prompt("Peak your place to add O on X axis") - 1;
     let goToY = prompt("Peak your place to add O on Y axis") - 1;
-    plays[goToY][goToX] = 0;
+    if (plays[goToY][goToX] !== 1 && plays[goToY][goToX] !== 0) plays[goToY][goToX] = 0;
 }
 
 
