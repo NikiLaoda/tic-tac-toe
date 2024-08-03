@@ -9,19 +9,18 @@
 .main-section {
     height: 100vh;
     width: 100vw;
-    padding: 0 22px 0 22px;
 
     background-color: #f8fafc;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 4vh;
 }
 
 .heading-name {
     font-size: 48px;
-    margin-top: 4vh;
 }
 
 .tic-tac-toe {
@@ -31,9 +30,14 @@
 }
 
 .grid-elem {
-    padding: 64px;
+    min-height: 22vh;
+    min-width: 22vh;
     border: 2px solid black;
-    font-size: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
 }
 
 .render-btn {
