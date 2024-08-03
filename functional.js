@@ -12,16 +12,23 @@ function playerPeak(gameSpot) {
                         e.textContent = "O";
                     }
                     cabinFull(gameSpot);
-                    console.log(fieldCabinet)
-                    playerRole++;
+                    let winStateO = isWin(gameSpot);
+                    if (winStateO === true) playerRole = 2;
+                    else playerRole++;
                     break;
                 case 1:
                     if (e.textContent === "") {
                         e.textContent = "X";
                     }
                     cabinFull(gameSpot);
-                    console.log(fieldCabinet)
-                    playerRole--;
+                    let winStateX = isWin(gameSpot);
+                    console.log(winStateX)
+                    if (winStateX === true) playerRole = 2;
+                    else playerRole--;
+                    break;
+                case 2:
+                    alert("X win! Try again by clicking on the button!");
+                    playerRole = 0;
                     break;
                 default:
                     return 0;
@@ -36,6 +43,21 @@ function cabinFull(gameSpot) {
     })
 }
 
+function isWin(gameSpot) {
+    if (gameSpot[0].textContent === gameSpot[1].textContent && gameSpot[0].textContent === gameSpot[2].textContent) return true;
+    if (gameSpot[3] === gameSpot[4] && gameSpot[3] === gameSpot[5]) return true;
+    if (gameSpot[6] === gameSpot[7] && gameSpot[6] === gameSpot[8]) return true;
+
+    if (gameSpot[0] === gameSpot[3] && gameSpot[0] === gameSpot[6]) return true;
+    if (gameSpot[1] === gameSpot[4] && gameSpot[1] === gameSpot[7]) return true;
+    if (gameSpot[2] === gameSpot[5] && gameSpot[2] === gameSpot[8]) return true;
+
+    if (gameSpot[0] === gameSpot[4] && gameSpot[0] === gameSpot[8]) return true;
+    if (gameSpot[2] === gameSpot[4] && gameSpot[2] === gameSpot[6]) return true;
+
+    else return false;
+}
+
 function render(button) {
     button.addEventListener("click", () => {
         playerField.forEach((e) => {e.textContent = ""})
@@ -44,8 +66,8 @@ function render(button) {
 
 
 function gamePlay(funcPlay, funcRender) {
+    render(renderBtn);
     playerPeak(playerField);
-    render(renderBtn);;
 }
 
 gamePlay(playerPeak, render);

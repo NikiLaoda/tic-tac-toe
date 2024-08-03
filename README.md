@@ -32,3 +32,12 @@ LOOP:
 one function gameLoop, which has all the functions I need to run the game
 
 ANSWER: good choice by now
+
+0  1  2
+[] [] []
+
+3  4  5
+[] [] []
+
+6  7  8
+[] [] []
