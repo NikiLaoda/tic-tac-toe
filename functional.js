@@ -45,15 +45,15 @@ function cabinFull(gameSpot) {
 
 function isWin(gameSpot) {
     if (gameSpot[0].textContent === gameSpot[1].textContent && gameSpot[0].textContent === gameSpot[2].textContent) return true;
-    if (gameSpot[3] === gameSpot[4] && gameSpot[3] === gameSpot[5]) return true;
-    if (gameSpot[6] === gameSpot[7] && gameSpot[6] === gameSpot[8]) return true;
+    if (gameSpot[3].textContent === gameSpot[4].textContent && gameSpot[3].textContent === gameSpot[5].textContent) return true;
+    if (gameSpot[6].textContent === gameSpot[7].textContent && gameSpot[6].textContent === gameSpot[8].textContent) return true;
 
-    if (gameSpot[0] === gameSpot[3] && gameSpot[0] === gameSpot[6]) return true;
-    if (gameSpot[1] === gameSpot[4] && gameSpot[1] === gameSpot[7]) return true;
-    if (gameSpot[2] === gameSpot[5] && gameSpot[2] === gameSpot[8]) return true;
+    if (gameSpot[0].textContent === gameSpot[3].textContent && gameSpot[0].textContent === gameSpot[6].textContent) return true;
+    if (gameSpot[1].textContent === gameSpot[4].textContent && gameSpot[1].textContent === gameSpot[7].textContent) return true;
+    if (gameSpot[2].textContent === gameSpot[5].textContent && gameSpot[2].textContent === gameSpot[8].textContent) return true;
 
-    if (gameSpot[0] === gameSpot[4] && gameSpot[0] === gameSpot[8]) return true;
-    if (gameSpot[2] === gameSpot[4] && gameSpot[2] === gameSpot[6]) return true;
+    if (gameSpot[0].textContent === gameSpot[4].textContent && gameSpot[0].textContent === gameSpot[8].textContent) return true;
+    if (gameSpot[2].textContent === gameSpot[4].textContent && gameSpot[2].textContent === gameSpot[6].textContent) return true;
 
     else return false;
 }
