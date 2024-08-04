@@ -44,16 +44,16 @@ function cabinFull(gameSpot) {
 }
 
 function isWin(gameSpot) {
-    if (gameSpot[0].textContent === gameSpot[1].textContent && gameSpot[0].textContent === gameSpot[2].textContent) return true;
-    if (gameSpot[3].textContent === gameSpot[4].textContent && gameSpot[3].textContent === gameSpot[5].textContent) return true;
-    if (gameSpot[6].textContent === gameSpot[7].textContent && gameSpot[6].textContent === gameSpot[8].textContent) return true;
+    if (gameSpot[0].textContent === gameSpot[1].textContent && gameSpot[0].textContent === gameSpot[2].textContent && ((gameSpot[0].textContent === 'X') || (gameSpot[0].textContent === 'O'))) return true;
+    if (gameSpot[3].textContent === gameSpot[4].textContent && gameSpot[3].textContent === gameSpot[5].textContent && ((gameSpot[3].textContent === 'X') || (gameSpot[3].textContent === 'O'))) return true;
+    if (gameSpot[6].textContent === gameSpot[7].textContent && gameSpot[6].textContent === gameSpot[8].textContent && ((gameSpot[6].textContent === 'X') || (gameSpot[6].textContent === 'O'))) return true;
 
-    if (gameSpot[0].textContent === gameSpot[3].textContent && gameSpot[0].textContent === gameSpot[6].textContent) return true;
-    if (gameSpot[1].textContent === gameSpot[4].textContent && gameSpot[1].textContent === gameSpot[7].textContent) return true;
-    if (gameSpot[2].textContent === gameSpot[5].textContent && gameSpot[2].textContent === gameSpot[8].textContent) return true;
+    if (gameSpot[0].textContent === gameSpot[3].textContent && gameSpot[0].textContent === gameSpot[6].textContent && ((gameSpot[0].textContent === 'X') || (gameSpot[0].textContent === 'O'))) return true;
+    if (gameSpot[1].textContent === gameSpot[4].textContent && gameSpot[1].textContent === gameSpot[7].textContent && ((gameSpot[1].textContent === 'X') || (gameSpot[1].textContent === 'O'))) return true;
+    if (gameSpot[2].textContent === gameSpot[5].textContent && gameSpot[2].textContent === gameSpot[8].textContent && ((gameSpot[2].textContent === 'X') || (gameSpot[2].textContent === 'O'))) return true;
 
-    if (gameSpot[0].textContent === gameSpot[4].textContent && gameSpot[0].textContent === gameSpot[8].textContent) return true;
-    if (gameSpot[2].textContent === gameSpot[4].textContent && gameSpot[2].textContent === gameSpot[6].textContent) return true;
+    if (gameSpot[0].textContent === gameSpot[4].textContent && gameSpot[0].textContent === gameSpot[8].textContent && ((gameSpot[0].textContent === 'X') || (gameSpot[0].textContent === 'O'))) return true;
+    if (gameSpot[2].textContent === gameSpot[4].textContent && gameSpot[2].textContent === gameSpot[6].textContent && ((gameSpot[2].textContent === 'X') || (gameSpot[2].textContent === 'O'))) return true;
 
     else return false;
 }
