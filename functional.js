@@ -8,26 +8,28 @@ function playerPeak(gameSpot) {
         e.addEventListener("click", () => {
             switch (playerRole) {
                 case 0:
-                    if (e.textContent === "") {
-                        e.textContent = "O";
-                    }
-                    cabinFull(gameSpot);
                     let winStateO = isWin(gameSpot);
                     if (winStateO === true) playerRole = 2;
                     else playerRole++;
-                    break;
-                case 1:
-                    if (e.textContent === "") {
-                        e.textContent = "X";
+
+                    if (e.textContent === "" && playerRole !== 2) {
+                        e.textContent = "O";
                     }
                     cabinFull(gameSpot);
+                    break;
+                case 1:
                     let winStateX = isWin(gameSpot);
                     console.log(winStateX)
                     if (winStateX === true) playerRole = 2;
                     else playerRole--;
+
+                    if (e.textContent === "" && playerRole !== 2) {
+                        e.textContent = "X";
+                    }
+                    cabinFull(gameSpot);
                     break;
                 case 2:
-                    alert("X win! Try again by clicking on the button!");
+                    alert("The game is over! Try again by pressing the button below!");
                     playerRole = 0;
                     break;
                 default:
@@ -61,13 +63,14 @@ function isWin(gameSpot) {
 function render(button) {
     button.addEventListener("click", () => {
         playerField.forEach((e) => {e.textContent = ""})
+        console.clear();
     })
 }
 
 
 function gamePlay(funcPlay, funcRender) {
-    render(renderBtn);
-    playerPeak(playerField);
+    funcRender(renderBtn);
+    funcPlay(playerField);
 }
 
 gamePlay(playerPeak, render);
